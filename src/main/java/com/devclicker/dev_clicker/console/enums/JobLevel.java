@@ -1,6 +1,6 @@
 package com.devclicker.dev_clicker.console.enums;
 
-public enum Positions {
+public enum JobLevel {
     INTERN(50, 5),
     JUNIOR(75, 10),
     MID(125, 15),
@@ -9,7 +9,7 @@ public enum Positions {
     private final int moneyCost;
     private final int codePerRound;
 
-    Positions(int moneyCost, int codePerRound) {
+    JobLevel(int moneyCost, int codePerRound) {
         this.moneyCost = moneyCost;
         this.codePerRound = codePerRound;
     }
