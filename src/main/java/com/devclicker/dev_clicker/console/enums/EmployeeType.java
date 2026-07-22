@@ -1,10 +1,9 @@
 package com.devclicker.dev_clicker.console.enums;
 
 public enum EmployeeType {
-    INTERN(50, 5),
-    JUNIOR(75, 10),
-    MID(125, 15),
-    SENIOR(200, 25);
+    JUNIOR(100, 1),
+    MID(500, 5),
+    SENIOR(2000, 20);
 
     private final Integer moneyCost;
     private final Integer codePerRound;
