@@ -24,7 +24,12 @@ public class DevClicker {
         System.out.println(gui.getCompany().getName());
         System.out.println(gui.getCompany().getCode());
         System.out.println(ProductType.valueOf("SITE").getCodeCost());
-        System.out.println(gui.getCompany().getEmployees());
+
+        for (Employee e : gui.getCompany().getEmployees()) {
+            System.out.println(e.getEmployeeType());
+            System.out.println(e.getCodePerMinute());
+            System.out.println("---      ");
+        }
 
     }
 }
