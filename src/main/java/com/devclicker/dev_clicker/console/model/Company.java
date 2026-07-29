@@ -1,5 +1,7 @@
 package com.devclicker.dev_clicker.console.model;
 
+import com.devclicker.dev_clicker.console.enums.EmployeeType;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -64,8 +66,8 @@ public class Company {
         this.money = money;
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    public void addEmployee(Employee employee) {
+        this.employees.add(employee);
     }
 
     public void setProducts(List<Product> products) {
