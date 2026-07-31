@@ -66,7 +66,8 @@ public class Company {
         this.money = money;
     }
 
-    public void addEmployee(Employee employee) {
+    public void addEmployee(EmployeeType employeeType) {
+        Employee employee = new Employee(employeeType);
         this.employees.add(employee);
     }
 

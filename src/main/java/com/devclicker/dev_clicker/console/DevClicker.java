@@ -15,10 +15,10 @@ public class DevClicker {
         Player gui = new Player("Paulo", oxyanCompany);
         Employee empregado = new Employee(EmployeeType.JUNIOR);
 
-        List<Employee> profissionais = new ArrayList<>();
-
         oxyanCompany.setCode(5L);
-        oxyanCompany.addEmployee(empregado);
+        oxyanCompany.addEmployee(EmployeeType.JUNIOR);
+        oxyanCompany.addEmployee(EmployeeType.JUNIOR);
+        oxyanCompany.addEmployee(EmployeeType.SENIOR);
 
         System.out.println(gui.getName());
         System.out.println(gui.getCompany().getName());
