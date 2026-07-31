@@ -1,6 +1,7 @@
 package com.devclicker.dev_clicker.console.model;
 
 import com.devclicker.dev_clicker.console.enums.EmployeeType;
+import com.devclicker.dev_clicker.console.enums.ProductType;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -69,6 +70,11 @@ public class Company {
     public void addEmployee(EmployeeType employeeType) {
         Employee employee = new Employee(employeeType);
         this.employees.add(employee);
+    }
+
+    public void addProduct(ProductType productType) {
+        Product product = new Product(productType);
+        this.products.add(product);
     }
 
     public void setProducts(List<Product> products) {

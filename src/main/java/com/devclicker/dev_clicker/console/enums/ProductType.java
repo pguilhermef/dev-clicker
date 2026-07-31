@@ -1,19 +1,21 @@
 package com.devclicker.dev_clicker.console.enums;
 
-public enum ProductType {
-    SITE(100, 1),
-    AUTOMATION(500, 5),
-    APP(2000, 20);
+import java.math.BigDecimal;
 
-    private final Integer moneyPerRound;
+public enum ProductType {
+    SITE(BigDecimal.valueOf(100), 1),
+    AUTOMATION(BigDecimal.valueOf(500), 5),
+    APP(BigDecimal.valueOf(2000), 20);
+
+    private final BigDecimal moneyPerRound;
     private final Integer codeCost;
 
-    ProductType(Integer moneyPerRound, Integer codeCost) {
+    ProductType(BigDecimal moneyPerRound, Integer codeCost) {
         this.moneyPerRound = moneyPerRound;
         this.codeCost = codeCost;
     }
 
-    public Integer getMoneyPerRound() {
+    public BigDecimal getMoneyPerRound() {
         return moneyPerRound;
     }
 
