@@ -2,6 +2,8 @@ package com.devclicker.dev_clicker.console.service;
 
 import com.devclicker.dev_clicker.console.enums.EmployeeType;
 import com.devclicker.dev_clicker.console.enums.ProductType;
+import com.devclicker.dev_clicker.console.exception.InsufficientCode;
+import com.devclicker.dev_clicker.console.exception.InsufficientMoney;
 import com.devclicker.dev_clicker.console.model.Company;
 
 import java.math.BigDecimal;
@@ -17,7 +19,7 @@ public class GameService {
         Long totalOfCode = company.getCode();
 
         if (totalOfCode < productType.getCodeCost()) {
-            System.out.println("Insufficient code");
+            throw new InsufficientCode("Insufficient Code");
         } else {
             company.setCode(totalOfCode - productType.getCodeCost());
             company.addProduct(productType);
@@ -28,7 +30,7 @@ public class GameService {
         BigDecimal totalOfMoney = company.getMoney();
 
         if (totalOfMoney.compareTo(employeeType.getMoneyCost()) < 0){
-            System.out.println("Insufficient money");
+            throw new InsufficientMoney("Insufficient Money");
         } else {
             company.setMoney(totalOfMoney.subtract(employeeType.getMoneyCost()));
         }
