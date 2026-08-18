@@ -27,6 +27,7 @@ public class DevClicker {
         System.out.println(ProductType.valueOf("SITE").getCodeCost());
 
         gameService.buyProduct(ProductType.SITE);
+        gameService.hireEmployee(EmployeeType.JUNIOR);
 
         for (Product p : gui.getCompany().getProducts()) {
             System.out.println(p.getProductType());
