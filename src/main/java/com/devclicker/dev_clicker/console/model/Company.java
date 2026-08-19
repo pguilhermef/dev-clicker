@@ -55,6 +55,28 @@ public class Company {
         return products;
     }
 
+    public Long getCodePerRound() {
+        List<Employee> employeeList = getEmployees();
+        Long totalCode = 0L;
+
+        for (Employee e : employeeList) {
+            totalCode += e.getCodePerMinute();
+        }
+
+        return totalCode;
+    }
+
+    public BigDecimal getMoneyPerRound() {
+        List<Product> productList = getProducts();
+        BigDecimal totalMoney = BigDecimal.ZERO;
+
+        for (Product p : productList) {
+            totalMoney = totalMoney.add(p.getIncomePerMinute());
+        }
+
+        return totalMoney;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -79,9 +101,5 @@ public class Company {
     public void addProduct(ProductType productType) {
         Product product = new Product(productType);
         this.products.add(product);
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
     }
 }
