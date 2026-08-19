@@ -11,7 +11,7 @@ public class MenuDisplay {
 
     public void showMainMenu() {
         System.out.println("╔══════════════════════════════════════╗");
-        System.out.println("║         DEV CLICKER v1.0             ║");
+        System.out.println("║           DEV CLICKER MENU           ║");
         System.out.println("╚══════════════════════════════════════╝");
         System.out.println("  CEO: " + company.getCeo().getName());
         System.out.println("  Empresa: " + company.getName());

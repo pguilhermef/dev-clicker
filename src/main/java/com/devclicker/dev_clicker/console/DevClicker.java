@@ -1,29 +1,26 @@
 package com.devclicker.dev_clicker.console;
 
-import com.devclicker.dev_clicker.console.enums.EmployeeType;
-import com.devclicker.dev_clicker.console.enums.ProductType;
 import com.devclicker.dev_clicker.console.model.Company;
-import com.devclicker.dev_clicker.console.model.Employee;
 import com.devclicker.dev_clicker.console.model.Player;
-import com.devclicker.dev_clicker.console.model.Product;
 import com.devclicker.dev_clicker.console.service.GameService;
 import com.devclicker.dev_clicker.console.service.ProductionService;
 import com.devclicker.dev_clicker.console.ui.MenuDisplay;
+import com.devclicker.dev_clicker.console.ui.ProfileForm;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class DevClicker {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         boolean continueGame = true;
+        ProfileForm profileForm = new ProfileForm();
 
-        Player gui = new Player("Paulo");
-        Company oxyanCompany = new Company(gui, "Oxyan");
-        MenuDisplay menuDisplay = new MenuDisplay(oxyanCompany);
+        profileForm.welcome();
 
-        GameService gameService = new GameService(oxyanCompany);
-        ProductionService productionService = new ProductionService(oxyanCompany);
+        Player player = new Player(profileForm.getCeoName());
+        Company company = new Company(player, profileForm.getCompanyName());
+
+        MenuDisplay menuDisplay = new MenuDisplay(company);
 
         menuDisplay.showMainMenu();
         menuDisplay.showCompanyStatus();
