@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Company {
+    private Player ceo;
     private String name;
     private LocalDateTime startDate;
     private Long code;
@@ -16,15 +17,18 @@ public class Company {
     private List <Employee> employees;
     private List <Product> products;
 
-    public Company(
-     String name
-    ) {
+    public Company(Player ceo, String name) {
+        this.ceo = ceo;
         this.name = name;
         this.startDate = LocalDateTime.now();
         this.code = 0L;
         this.money = BigDecimal.ZERO;
         this.employees = new ArrayList<>();
         this.products = new ArrayList<>();
+    }
+
+    public Player getCeo() {
+        return ceo;
     }
 
     public String getName() {
