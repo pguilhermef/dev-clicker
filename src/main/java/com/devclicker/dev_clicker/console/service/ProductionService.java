@@ -14,6 +14,11 @@ public class ProductionService {
         this.company = company;
     };
 
+    private void calculateManualCodePerRound() {
+        Long totalOfCode = company.getCode();
+        company.setCode(totalOfCode += 1);
+    }
+
     private void calculateEmployees() {
         Long totalOfCode = company.getCode();
 
@@ -39,6 +44,7 @@ public class ProductionService {
     }
 
     public void calculateResources() {
+        calculateManualCodePerRound();
         calculateEmployees();
         calculateMoney();
     }
