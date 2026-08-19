@@ -34,7 +34,7 @@ public class DevClicker {
 
         System.out.println("Calculando código...");
 
-        productionService.calculateEmployees();
+        productionService.calculateResources();
         System.out.println("Total de Código: " +gui.getCompany().getCode());
         System.out.println("Total de Dinheiro: " +gui.getCompany().getMoney());
 
