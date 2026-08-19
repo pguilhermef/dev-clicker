@@ -34,5 +34,8 @@ public class GameService {
         }
 
         company.setMoney(totalOfMoney.subtract(employeeType.getMoneyCost()));
+        company.addEmployee(employeeType);
+
+        System.out.println("Você contratou um profissional " + employeeType.);
     }
 }

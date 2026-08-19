@@ -4,7 +4,7 @@ import com.devclicker.dev_clicker.console.enums.EmployeeType;
 
 public class Employee {
     private EmployeeType employeeType;
-    private Integer codePerMinute;
+    private Long codePerMinute;
 
     public Employee(EmployeeType employeeType) {
         this.employeeType = employeeType;
@@ -19,11 +19,11 @@ public class Employee {
         this.employeeType = employeeType;
     }
 
-    public Integer getCodePerMinute() {
+    public Long getCodePerMinute() {
         return codePerMinute;
     }
 
-    public void setCodePerMinute(Integer codePerMinute) {
+    public void setCodePerMinute(Long codePerMinute) {
         this.codePerMinute = codePerMinute;
     }
 }

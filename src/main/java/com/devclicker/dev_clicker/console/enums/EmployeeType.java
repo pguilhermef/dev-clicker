@@ -3,14 +3,14 @@ package com.devclicker.dev_clicker.console.enums;
 import java.math.BigDecimal;
 
 public enum EmployeeType {
-    JUNIOR(new BigDecimal(100), 1),
-    MID(new BigDecimal(500), 5),
-    SENIOR(new BigDecimal(2000), 20);
+    JUNIOR(new BigDecimal(100), 1L),
+    MID(new BigDecimal(500), 5L),
+    SENIOR(new BigDecimal(2000), 20L);
 
     private final BigDecimal moneyCost;
-    private final Integer codePerRound;
+    private final Long codePerRound;
 
-    EmployeeType(BigDecimal moneyCost, Integer codePerRound) {
+    EmployeeType(BigDecimal moneyCost, Long codePerRound) {
         this.moneyCost = moneyCost;
         this.codePerRound = codePerRound;
     }
@@ -19,7 +19,7 @@ public enum EmployeeType {
         return moneyCost;
     }
 
-    public Integer getCodePerRound() {
+    public Long getCodePerRound() {
         return codePerRound;
     }
 }
