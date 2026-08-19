@@ -17,31 +17,32 @@ public class GameService {
 
     public void buyProduct(ProductType productType) {
         Long totalOfCode = company.getCode();
-        String productTypeName = String.format(productType.name()).toLowerCase();
-        String confirmationMessageOfCreationApp = "Você construiu um " + productTypeName;
+        String productTypeName = productType.name().toLowerCase();
+        String confirmationMessageOfCreationApp = "You built one" + productTypeName;
 
         if (totalOfCode < productType.getCodeCost()) {
-            throw new InsufficientCodeException("Insufficient Code");
+            System.out.println("Insufficient Code");
+        } else {
+            company.addProduct(productType);
+            company.setCode(totalOfCode - productType.getCodeCost());
+
+            System.out.println(confirmationMessageOfCreationApp);
         }
 
-        company.setCode(totalOfCode - productType.getCodeCost());
-        company.addProduct(productType);
-
-        System.out.println(confirmationMessageOfCreationApp);
     }
 
     public void hireEmployee(EmployeeType employeeType) {
         BigDecimal totalOfMoney = company.getMoney();
-        String professionalTypeName = String.format(employeeType.name()).toLowerCase();
-        String confirmationMessageOfHire = "Você contratou um profissional " + professionalTypeName;
+        String professionalTypeName = employeeType.name().toLowerCase();
+        String confirmationMessageOfHire = "You hired one " + professionalTypeName + " profissional";
 
         if (totalOfMoney.compareTo(employeeType.getMoneyCost()) < 0){
-            throw new InsufficientMoneyException("Insufficient Money");
+            System.out.println("Insufficient Money");
+        } else {
+            company.setMoney(totalOfMoney.subtract(employeeType.getMoneyCost()));
+            company.addEmployee(employeeType);
+
+            System.out.println(confirmationMessageOfHire);
         }
-
-        company.setMoney(totalOfMoney.subtract(employeeType.getMoneyCost()));
-        company.addEmployee(employeeType);
-
-        System.out.println(confirmationMessageOfHire);
     }
 }
