@@ -9,6 +9,8 @@ import com.devclicker.dev_clicker.console.ui.ProfileForm;
 
 import java.util.Scanner;
 
+import static com.devclicker.dev_clicker.console.utils.ConsoleUtils.waitForMainOption;
+
 public class DevClicker {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +24,9 @@ public class DevClicker {
 
         MenuDisplay menuDisplay = new MenuDisplay(company);
 
-        menuDisplay.showMainMenu();
-        menuDisplay.showCompanyStatus();
+        while (player.getWantsContinueGame()) {
+            menuDisplay.showMainMenu();
+            waitForMainOption(menuDisplay);
+        }
     }
 }
