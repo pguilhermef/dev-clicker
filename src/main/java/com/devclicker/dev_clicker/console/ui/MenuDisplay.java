@@ -1,6 +1,13 @@
 package com.devclicker.dev_clicker.console.ui;
 
+import com.devclicker.dev_clicker.console.enums.EmployeeType;
+import com.devclicker.dev_clicker.console.enums.ProductType;
 import com.devclicker.dev_clicker.console.model.Company;
+
+import java.util.Scanner;
+
+import static com.devclicker.dev_clicker.console.utils.ConsoleUtils.clearConsole;
+import static com.devclicker.dev_clicker.console.utils.ConsoleUtils.waitForEnter;
 
 public class MenuDisplay {
     private Company company;
@@ -39,9 +46,47 @@ public class MenuDisplay {
         System.out.println("  Poder de Receita por rodada: " + company.getMoneyPerRound());
         System.out.println("  Profissionais Contratados: " + company.getEmployees().size());
         System.out.println("  Produtos Desenvolvidos: " + company.getProducts().size());
-        System.out.println(" ");
+        waitForEnter(new Scanner(System.in));
+        clearConsole();
+    }
+
+    public void showHireOptions() {
         System.out.println("╔══════════════════════════════════════╗");
-        System.out.println("║       Pressione qualquer tecla       ║");
+        System.out.println("║              DEVINKEDIN              ║");
         System.out.println("╚══════════════════════════════════════╝");
+        System.out.println("  Junior - Custa $:" + EmployeeType.JUNIOR.getMoneyCost() + " Gera </>: " + EmployeeType.JUNIOR.getCodePerRound());
+        System.out.println("  Mid - Custa $:" + EmployeeType.MID.getMoneyCost() + " Gera </>: " + EmployeeType.MID.getCodePerRound());
+        System.out.println("  Senior - Custa $:" + EmployeeType.SENIOR.getMoneyCost() + " Gera </>: " + EmployeeType.SENIOR.getCodePerRound());
+        System.out.println("╔══════════════════════════════════════╗");
+        System.out.println("║ 1. Junior                            ║");
+        System.out.println("║ 2. Mid/Pleno                         ║");
+        System.out.println("║ 3. Senior                            ║");
+        System.out.println("║ 0. Voltar ao Menu Principal          ║");
+        System.out.println("╚══════════════════════════════════════╝");
+        waitForEnter(new Scanner(System.in));
+        clearConsole();
+    }
+
+    public void showAppsOptions() {
+        System.out.println("╔══════════════════════════════════════╗");
+        System.out.println("║              DEVINKEDIN              ║");
+        System.out.println("╚══════════════════════════════════════╝");
+        System.out.println("  Site - Custa </>:" + ProductType.SITE.getCodeCost() + " Gera $: " + ProductType.SITE.getMoneyPerRound());
+        System.out.println("  Automação - Custa </>:" + ProductType.AUTOMATION.getCodeCost() + " Gera $: " + ProductType.AUTOMATION.getMoneyPerRound());
+        System.out.println("  Aplicativo - Custa </>:" + ProductType.APP.getCodeCost() + " Gera $: " + ProductType.APP.getMoneyPerRound());
+        System.out.println("╔══════════════════════════════════════╗");
+        System.out.println("║ 1. Site                              ║");
+        System.out.println("║ 2. Automação                         ║");
+        System.out.println("║ 3. Aplicativo                        ║");
+        System.out.println("║ 0. Voltar ao Menu Principal          ║");
+        System.out.println("╚══════════════════════════════════════╝");
+        waitForEnter(new Scanner(System.in));
+        clearConsole();
+    }
+
+    // Precisamos criar a função de seleção de criação de contratação e criação de produtos
+
+    public Company getCompany() {
+        return company;
     }
 }
