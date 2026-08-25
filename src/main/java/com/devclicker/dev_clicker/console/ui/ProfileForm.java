@@ -2,6 +2,9 @@ package com.devclicker.dev_clicker.console.ui;
 
 import java.util.Scanner;
 
+import static com.devclicker.dev_clicker.console.utils.ConsoleUtils.clearConsole;
+import static com.devclicker.dev_clicker.console.utils.ConsoleUtils.waitForEnter;
+
 public class ProfileForm {
     private Scanner scanner = new Scanner(System.in);
     private String companyName;
@@ -19,29 +22,23 @@ public class ProfileForm {
                 usar código para desenvolver produtos que irão gerar renda e então \s
                 contratar profissionais para gerar mais código.""");
         System.out.println(" ");
-        System.out.println("╔══════════════════════════════════════╗");
-        System.out.println("║      Pressione qualquer tecla...     ║");
-        System.out.println("╚══════════════════════════════════════╝");
 
-        scanner.next();
+        waitForEnter(scanner);
+        clearConsole();
 
-        System.out.println("Primeiro de tudo, qual será o nome da sua empresa?");
-        System.out.println(" ");
-        System.out.println("(Escolha bem, pois depois que registrarmos firma no cartório, não será possível alterar.)");
-        scanner.nextLine();
+        System.out.println("Primeiro de tudo, qual será o nome da sua empresa? (Escolha bem, pois depois que registrarmos firma no cartório, não será possível alterar.)");
         companyName = scanner.nextLine();
+        clearConsole();
 
 
         System.out.println("Muito bem! Esse é um ótimo nome. Agora, qual será o nome do grande CEO da " + companyName + "?");
         ceoName = scanner.nextLine();
+        clearConsole();
 
-        System.out.println("Uau, " + ceoName + " CEO da " + companyName + ". Parece perfeito.");
+        System.out.println("Uau, " + ceoName + ", CEO da " + companyName + ". Parece perfeito.");
 
-        System.out.println("╔══════════════════════════════════════╗");
-        System.out.println("║      Pressione qualquer tecla...     ║");
-        System.out.println("╚══════════════════════════════════════╝");
-
-        scanner.next();
+        waitForEnter(scanner);
+        clearConsole();
     }
 
     public String getCeoName() {
